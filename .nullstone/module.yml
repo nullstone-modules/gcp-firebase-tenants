@@ -1,0 +1,16 @@
+org_name: nullstone
+name: gcp-firebase-tenants
+friendly_name: Firebase Tenants
+description: Configure tenants in Firebase Auth for a GCP project.
+category: block
+subcategory: ""
+provider_types:
+    - gcp
+platform: auth
+subplatform: firebase
+type: ""
+appCategories: []
+is_public: true
+tool_name: opentofu
+include: []
+source_url: https://github.com/nullstone-modules/gcp-firebase-tenants

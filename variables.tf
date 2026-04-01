@@ -2,6 +2,7 @@ variable "tenants" {
   type = list(object({
     display_name : string
     disable_auth : bool
+    enable_google_idp : optional(bool, true)
   }))
   default = []
 

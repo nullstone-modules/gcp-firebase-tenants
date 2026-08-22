@@ -12,3 +12,18 @@ locals {
 data "google_secret_manager_secret_version" "client_secret" {
   secret = local.google_client_secret_secret_id
 }
+
+data "ns_connection" "microsoft_idp" {
+  name     = "microsoft-idp"
+  contract = "datastore/gcp/firebase"
+}
+
+locals {
+  microsoft_client_id               = data.ns_connection.microsoft_idp.outputs.client_id
+  microsoft_client_secret_secret_id = data.ns_connection.microsoft_idp.outputs.client_secret_secret_id
+  microsoft_client_secret           = data.google_secret_manager_secret_version.microsoft_client_secret.secret_data
+}
+
+data "google_secret_manager_secret_version" "microsoft_client_secret" {
+  secret = local.microsoft_client_secret_secret_id
+}

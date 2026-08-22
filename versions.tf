@@ -6,5 +6,8 @@ terraform {
     google = {
       source = "hashicorp/google"
     }
+    terracurl = {
+      source = "devops-rob/terracurl"
+    }
   }
 }
